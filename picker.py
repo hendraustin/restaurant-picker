@@ -8,7 +8,7 @@ import requests
 def get_location() -> str:
     city = input("Please input your city: ")
     state = input("Please input your state: ")
-    return (city + " " + state).replace(" ", "%")
+    return (city + "%" + state).replace(" ", "%")
 
 
 # Yelp Fusion API has a max of 50 businesses per page that are always sorted in the same order
