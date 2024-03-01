@@ -13,13 +13,15 @@ def get_location() -> str:
 
 # Yelp Fusion API has a max of 50 businesses per page that are always sorted in the same order
 # So, we're choosing a random initial starting point (offset) to select a restaurant from
-def get_random_offset_page(location: str, total: int) -> list:
+def get_random_offset_page(location: str, total_businesses: int) -> list:
     max_limit = 50
     max_businesses_per_request = 1000
     restaurants = []
 
-    if total < max_businesses_per_request:
-        random_offset = random.randrange(0, math.floor(total / max_limit) * max_limit)
+    if total_businesses < max_businesses_per_request:
+        random_offset = random.randrange(
+            0, math.floor(total_businesses / max_limit) * max_limit
+        )  # Rounding down to make sure to retrieve a complete page of businesses within the range
     else:
         random_offset = random.randrange(0, max_businesses_per_request - 1)
 
