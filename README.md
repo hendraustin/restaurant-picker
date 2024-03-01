@@ -9,6 +9,7 @@ The ORP takes a list of given restaurants and, depending on any flags passed to 
 ## Prerequisites
 
 - Python 3.x
+- [Yelp Fusion API Key](https://docs.developer.yelp.com/docs/fusion-intro)
 
 ## Python Dependencies
 
